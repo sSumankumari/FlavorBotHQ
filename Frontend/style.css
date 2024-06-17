@@ -1,0 +1,112 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #3e2723;
+    text-align: center; /* Center all text */
+}
+
+header {
+    background-color: #ff7043;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #ffab91;
+    padding: 5px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block; /* Change to inline-block for centering */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #3e2723;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    text-align: center; /* Center the banner */
+}
+
+.banner img {
+    border: 1px white solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(238, 231, 231, 0.926);
+    margin: 5px;
+    width: 60%;
+    height: auto;
+}
+
+#menu, #contact, #gallery, #about, #chatbot {
+    padding: 20px;
+    margin: 20px auto; /* Center the sections */
+    background-color: #ffe0b2;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgb(241, 233, 211);
+    max-width: 800px; /* Set a max-width to constrain the width */
+    text-align: center;
+}
+
+#menu .menu-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #d84315;
+}
+
+.menu-item {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ffccbc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #ff7043;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+footer .social-media {
+    list-style: none;
+    padding: 0;
+    display: inline-block; /* Change to inline-block for centering */
+}
+
+footer .social-media li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer .social-media li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.chat-bot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    z-index: 1000;
+}

@@ -29,10 +29,24 @@ async def handle_request(request: Request):
         'order.add - context: ongoing-order': add_to_order,
         'order.remove - context: ongoing-order': remove_from_order,
         'order.complete - context: ongoing-order': complete_order,
-        'track.order - context: ongoing-tracking': track_order
+        'track.order - context: ongoing-tracking': track_order,
+        'new.order': start_new_order  # intent to handle starting a new order
     }
 
-    return intent_handler_dict[intent](parameters, session_id)
+    handler = intent_handler_dict.get(intent)
+    if handler:
+        return handler(parameters, session_id)
+    else:
+        return JSONResponse(content={"fulfillmentText": "Sorry, I didn't understand that request."})
+
+
+def start_new_order(parameters: dict, session_id: str):
+    inprogress_orders[session_id] = {}
+    fulfillment_text = "Started a new order for you. What would you like to add?"
+
+    return JSONResponse(content={
+        "fulfillmentText": fulfillment_text
+    })
 
 
 def save_to_db(order: dict):
