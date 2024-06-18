@@ -123,6 +123,7 @@ def remove_from_order(parameters: dict, session_id: str):
         })
 
     food_items = parameters["food-item"]
+    quantities = parameters["number"]
     current_order = inprogress_orders[session_id]
 
     removed_items = []
