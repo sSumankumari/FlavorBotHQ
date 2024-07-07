@@ -1,12 +1,17 @@
 import mysql.connector
-global cnx
+import os
 
-cnx = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="pandeyji_eatery"
-)
+def get_db_connection():
+    return mysql.connector.connect(
+        host=os.getenv("DB_HOST", "localhost"),
+        user=os.getenv("DB_USER", "root"),
+        password=os.getenv("DB_PASSWORD", "root"),
+        database=os.getenv("DB_NAME", "pandeyji_eatery"),
+        port=int(os.getenv("DB_PORT", 3306))  # Default to 3306 if DB_PORT is not set
+    )
+
+global cnx
+cnx = get_db_connection()
 
 # Function to call the MySQL stored procedure and insert an order item
 def insert_order_item(food_item, quantity, order_id):
